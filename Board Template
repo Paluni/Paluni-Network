@@ -1,0 +1,27 @@
+If you are using an unsupported ESP32 board you will need to complie a board template. 
+Templates provide an easy way to create, modify and share pin configurations for any type of board you have without the need to modify the firmware. 
+On the config dashboard you can go to the advanced options and fill the Board Template field with your custom template. If you want to go back to use the default boards, leave this field completely empty.
+
+CREATE YOUR OWN TEMPLATE 
+
+The board templates have the following format: 
+
+{"name":"[433] Heltec LoRa V1","aADDR":60,"oSDA":4,"oSCL":15,"oRST":16,"pBut":0,"led":25,"radio":1,"lNSS":18,"lDIO0":26,"lDIO1":12,"lBUSSY":0,"lRST":14,"lMISO":19,"lMOSI":27,"lSCK":5,"lTCXOV":0.0}
+
+name: Give a name to your board
+aADDR: I2C address of the OLED display (in decimal format)
+oSDA: OLED SDA pin
+oSCL: OLED SCL pin
+oRST: OLED RST pin
+pBut: GPIO used for the board user button
+led: GPIO used for the main board indicator led
+radio: Type of radio module user by your board 0: sx166x, 1: sx127x
+lNSS: LoRa NSS pin
+lDIO0: LoRa DIO0 pin
+lDIO1: LoRa DIO1 pin
+lBUSSY: LoRa BUSY pin
+lRST: LoRa RST pin
+lMISO: LoRa MISO pin
+lMOSI: LoRa MOSI pin
+lSCK: LoRa SCK pin
+lTCXOV: LoRa TXCO voltage (float value, only used for sx126x modules)
