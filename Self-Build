@@ -1,0 +1,85 @@
+Instructions and hardware requirements for building compliant LoRa ground stations 
+The LoRa compliant ground station for Paluni is built on ESP32 boards that are compatible with SX126x, SX127x, si443x & LLCC68 
+Official Support is provided for the following boards 
+Heltec WiFi LoRa 32 V1 (433MHz & 863-928MHz versions)
+Heltec WiFi LoRa 32 V2 (433MHz & 863-928MHz versions)
+TTGO LoRa32 V1 (433MHz & 868-915MHz versions)
+TTGO LoRa32 V2 (433MHz & 868-915MHz versions)
+TTGO LoRa32 V2 (Manually swapped SX1267 to SX1278)
+T-BEAM + OLED (433MHz & 868-915MHz versions)
+T-BEAM V1.0 + OLED
+FOSSA 1W Ground Station (433MHz & 868-915MHz versions)
+ESP32 dev board + SX126X with crystal (Custom build, OLED optional)
+ESP32 dev board + SX126X with TCXO (Custom build, OLED optional)
+ESP32 dev board + SX127X (Custom build, OLED optional) 
+
+However any ESP32 board with a compatible LoRa chip can be used by incorporating our template (see template section) 
+
+INSTALLATION 
+
+Install the latest release of our firmware from the LoRa Firmware Page 
+Flash with PLatformIO (Platform IO Guide) 
+Subsequent updates are provided OTA 
+Arduino IDE can be used however is much more difficult (Arduino Guide) 
+
+CONFIGURATION 
+
+Configuration details can be found at (configuration page) 
+
+THIRD PARTY LIBRARIES 
+
+Paluni LoRa Boards rely on several third party libraries namely 
+RadioLib
+ArduinoJson
+ESP8266_SSD1306
+IoTWebConf2
+PubSubClient
+ESPNTPClient
+FailSafeMode
+
+ANTENNA 
+
+Antenna's are crucial to all satellite communication systems and Paluni is no different. The stock antenna included with most boards is unlikely to offer any signal 
+Recommendations 
+
+1. Dipole/Closed Dipole 
+2. Ground Plane (Quarter Wave) 
+3. Dual Band Mobile Antenna 
+
+LNA's 
+
+Low noise amplifiers are required to filter unwanted noise from the comms system. We advise structuring the build as Antenna-Filter-LNA-Board 
+
+We recommend 
+WINSINN 0.1-2000MHz SDA Wideband RF Amplifier 30DB 
+
+FILTER 
+
+To prevent oversaturation of the LoRa module you require a filter. We recommend either a Bandpass Filter (BOF) or Bandstop (Notch) Filter
+
+We recommend the Distill:Barebones Bandstop (NOTCH) Filter 
+
+PROGRAMMTIC API 
+
+Authentication
+
+All the API endpoints share the same authentication through a Bearer Token that can be provided by the Discord bot using the command: -
+
+Although public endpoints will answer wothout athentication, the number of allowed querys is higher for authenticated users, so we recomend using always authentication.
+
+Endpoitns
+
+Each endpoint gives access to a different resource of the TinyGS system. Along with each endpoint url we provide the allowed methods. The base url for the API is --.
+
+Station tx
+
+Url: --
+
+Methods: POST
+
+Responses:
+
+200 Transmission OK.
+428 tx disabled by config.
+Description: Commands your station to transmit the given frame. The allow tx flag must be enabled on the firmware or the transmission will be prevented by hardware. The payload must be given in base64 format.
+
