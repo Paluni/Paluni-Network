@@ -1,7 +1,7 @@
 /***********************************************************************
-  tinyGS.ini - GroundStation firmware
+  Paluni firmware
   
-  Copyright (C) 2020 -2021 @G4lile0, @gmag12 and @dev_4m1g0
+  Copyright (C) 2020 -2022 Paluni Global
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -44,23 +44,18 @@
     sx126x
     sx127x
 
-    Web of the project: https://tinygs.com/
-    Github: https://github.com/G4lile0/tinyGS
-    Main community chat: https://t.me/joinchat/DmYSElZahiJGwHX6jCzB3Q
+    Web of the project: https://paluni.io/
+    Github: https://github.com/paluni/paluni-network
+    Main community chat: https://t.me/paluninetwork
 
-    In order to onfigure your Ground Station please open a private chat to get your credentials https://t.me/tinygs_personal_bot
-    Data channel (station status and received packets): https://t.me/tinyGS_Telemetry
-    Test channel (simulator packets received by test groundstations): https://t.me/TinyGS_Test
+    In order to configure your Ground Station please open a private chat to get your credentials https://t.me/paluni_personal_bot
+    Data channel (station status and received packets): https://t.me/paluni_Telemetry
+    Test channel (simulator packets received by test groundstations): https://t.me/paluni_Test
 
-    Developers:
-      @gmag12       https://twitter.com/gmag12
-      @dev_4m1g0    https://twitter.com/dev_4m1g0
-      @g4lile0      https://twitter.com/G4lile0
+    
 
 ====================================================
-  IMPORTANT:
-    - Follow this guide to get started: https://github.com/G4lile0/tinyGS/wiki/Quick-Start
-    - Arduino IDE is NOT recommended, please use Platformio: https://github.com/G4lile0/tinyGS/wiki/Platformio
+  
 
 **************************************************************************/
 
